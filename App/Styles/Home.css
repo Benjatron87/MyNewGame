@@ -1,0 +1,30 @@
+.header-bar{
+    padding: 6vh 0 6vh 0;
+    text-align: center;
+    background-color: whitesmoke;
+    margin-bottom: 6vh;
+}
+
+.home-container {
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 20%;
+    margin-left: 40%;
+}
+
+.items{
+    text-align: center;
+} 
+
+.button{
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 3px;
+} 
+
+a:link{
+    text-decoration: none!important;
+    color: black;
+}
+

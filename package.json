@@ -1,0 +1,23 @@
+{
+  "name": "mynewgame",
+  "version": "1.0.0",
+  "description": "Gonna make a new game for fun.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Benjatron87/MyNewGame.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Benjatron87/MyNewGame/issues"
+  },
+  "homepage": "https://github.com/Benjatron87/MyNewGame#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "uniq": "^1.0.1"
+  }
+}
