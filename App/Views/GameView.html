@@ -20,18 +20,20 @@
 </head>
 
 <body>
-    <div class="header-bar border border-secondary d-flex justify-content-center">
-        <a href="/"> <h1>Benj's Cool New Game</h1></a>
-    </div>
-
     <div class="d-flex justify-content-center">
-        <canvas id="myCanvas" height="800px" width="800px"></canvas>
+        <canvas id="myCanvas" height="600px" width="978px"></canvas>
+
+    <div id="Menu">
+        <div id="Pause">New Game</div>
+        <div id="howto">(Use Mouse To Move. Click To Fire!!)</div>
+        <a id="code-link" href="/">Home</a>       
+    </div>    
+    <div id="score">Score: 0</div>
+    <div id="highscore">High Score: 0</div>
     </div>
-   
-
-
 </body>
     <script src="../GameObjects/Ship.js"></script>
     <script src="../GameObjects/Enemies.js"></script>
+    <script src="../GameObjects/Projectile.js"></script>
     <script src="../Controllers/Game.js"></script>
 </html>

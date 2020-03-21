@@ -1,11 +1,96 @@
-.header-bar{
-    padding: 6vh 0 6vh 0;
-    text-align: center;
-    background-color: whitesmoke;
-    margin-bottom: 6vh;
+body{
+    background-image: url("../GameObjects/Images/flagImg.png");
 }
+    
 
 a:link{
     text-decoration: none!important;
     color: black;
+}
+
+canvas { 
+    background-image: url("../GameObjects/Images/backgroundImg.png");
+    background-color: rgb(95, 206, 250);    
+    background-position: center;
+    background-size: cover;
+    height: 600px;
+    width: 978px;
+    display: block;
+    border: 1px solid red;
+    border-radius: 5px;
+    margin-top: 40px;
+}
+
+#Pause{
+    position: absolute;
+    text-align: center;
+    width: 130px;
+    left: 650px;
+    top: 270px;
+    background: rgb(225, 0, 0);
+    padding: 15px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#howto{
+    position: absolute;
+    text-align: center;
+    width: 380px;
+    left: 530px;
+    top: 330px;
+    color: blue;
+    text-shadow: -3px 0 white;
+    font-weight: bold;
+}
+
+#code-link{
+    position: absolute;
+    text-align: center;
+    width: 130px;
+    left: 650px;
+    top: 360px;
+    color: blue;
+    text-shadow: -3px 0 white;
+    font-weight: bold;
+}
+
+#code-link:hover{
+    text-decoration: none;
+    color: navy;
+    text-shadow: none;
+}
+
+#Pause:hover{
+    color:  rgb(225, 0, 0);
+    background: rgb(252, 252, 255);
+}
+
+#score{
+    position: absolute;
+    text-align: center;
+    width: 160px;
+    left: 1000px;
+    top: 50px;
+    color: white;
+    background: rgb(0, 0, 225);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#highscore{
+    position: absolute;
+    text-align: center;
+    width: 160px;
+    left: 800px;
+    top: 50px;
+    color: white;
+    background: rgb(0, 0, 225);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.hide_cursor{
+    cursor: none;
 }
