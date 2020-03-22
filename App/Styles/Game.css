@@ -94,3 +94,9 @@ canvas {
 .hide_cursor{
     cursor: none;
 }
+
+div.centered {
+    margin-left:auto;
+    margin-right:auto;
+    width:80%;
+}

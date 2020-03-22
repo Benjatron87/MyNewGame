@@ -1,30 +1,83 @@
+body{
+    background-color: rgb(95, 206, 250);    
+}
+
 .header-bar{
-    padding: 6vh 0 6vh 0;
+    border: 2px solid red;
+    padding: 3vh 0 3vh 0;
     text-align: center;
     background-color: whitesmoke;
-    margin-bottom: 6vh;
 }
 
 .home-container {
+    position: absolute;
+    background-image: url('../GameObjects/Images/flagImg.png');
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    left: 0%;
+    top: 30vh;
     border: 1px solid black;
     border-radius: 5px;
-    width: 20%;
-    margin-left: 40%;
+    width: 30%;
+    height: 34%;
+    margin-left: 35%;
+}
+
+#myCanvas{
+    background-image: url("../GameObjects/Images/backgroundImg.png");
+    background-color: rgb(95, 206, 250);    
+    background-position: center;
+    background-size: cover;
+    height: 600px;
+    width: 1000px;
+    display: block;
 }
 
 .items{
     text-align: center;
 } 
 
-.button{
-    border: 1px solid black;
-    border-radius: 5px;
-    margin: 5px;
-    padding: 3px;
-} 
+.settings{
+    position: absolute;
+    top: 22vh;
+    border: 1px solid white;
+    background-color: rgb(95, 206, 250);
+    text-shadow: 1px -2px black;
+    padding: 0 5px 0 5px;
+    color: rgb(185, 121, 0);
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.about{
+    top: 14vh;
+    position: absolute;
+    border: 1px solid white;
+    background-color: rgb(95, 206, 250);
+    text-shadow: 1px -2px black;
+    padding: 0 5px 0 5px;
+    color: green;
+    font-weight: bold;
+    font-size: 30px;
+
+}
+
+.play{
+    top: 6vh;
+    position: absolute;
+    border: 1px solid white;
+    background-color: rgb(95, 206, 250);
+    text-shadow: 1px -2px black;
+    padding: 0 5px 0 5px;
+    color: rgb(253, 188, 130);
+    font-weight: bold; 
+    font-size: 30px;
+}
 
 a:link{
     text-decoration: none!important;
-    color: black;
+    color: red;
+    text-shadow: 1px -2px blue;
 }
 

@@ -1,5 +1,11 @@
 var score = 0;
-var highScore = 0;
+var oldHighScore;
+var newHighScore;
+$.get('/highscore', function(req, res){
+    console.log(req);
+    $('#highScore').text(req);
+    oldHighScore = req;
+});
 var mouseX = 0;
 var mouseY = 0;
 var ShipX = 10;
@@ -10,6 +16,7 @@ var enemies = [];
 var lives =[];
 var pause = true;
 var bool = true;
+var trumpSound = new sound('/GameObjects/Sounds/trump.mov');
 
 canvas.addEventListener("mousemove", function(e) 
 { 
@@ -18,6 +25,15 @@ canvas.addEventListener("mousemove", function(e)
     }
 }); 
 
+document.onkeydown = function(e) {
+    switch (e.keyCode) {
+        case 32:
+            if(!pause){
+                fireLaser(); 
+            }
+        break;
+    }
+};
 canvas.addEventListener("mousedown", function(e) 
 { 
     if(!pause){
@@ -60,6 +76,21 @@ $('#Pause').on('click', function(){
     }
     
 })
+
+function sound(src) {
+    this.sound = document.createElement("audio");
+    this.sound.src = src;
+    this.sound.setAttribute("preload", "auto");
+    this.sound.setAttribute("controls", "none");
+    this.sound.style.display = "none";
+    document.body.appendChild(this.sound);
+    this.play = function(){
+        this.sound.play();
+    }
+    this.stop = function(){
+        this.sound.pause();
+    }    
+}
 
 var buildlives = function(){
     ctx.clearRect(0,0,600,75);
@@ -156,9 +187,11 @@ var updateEnemies = function(){
             enemies.splice(i,1);
             if(lives.length > 1){
                 lives.splice(lives.length - 1, 1);
+                new sound('/GameObjects/Sounds/wrong.mp3').play();
             }
             else{
                 lives.splice(lives.length - 1, 1);
+                new sound('/GameObjects/Sounds/wrong.mp3').play();
                 gameOver();
             }
             
@@ -180,6 +213,7 @@ var checkForDestruction = function(){
                     ctx.clearRect(lasers[j].X, lasers[j].Y, 40, 15);
                     enemies.splice(i,1);
                     lasers.splice(j,1);
+                    new sound('/GameObjects/Sounds/trump.mov').play();
                     addScore();
                 }
             }
@@ -197,9 +231,12 @@ var update = function(){
 };
 
 var addScore = function(){
+    newHighScore = $('#highScore').text();
+    console.log(newHighScore);
     score += 1;
-    if(score > highScore){
-        highScore = score;
+    if(score > newHighScore){
+        newHighScore = score;  
+       
     }
     difficulty -= 5;
 
@@ -207,7 +244,7 @@ var addScore = function(){
         difficulty = 200;
     }
     $('#score').text('Score: ' + score);
-    $('#highscore').text('High Score: ' + highScore);
+    $('#highScore').text(newHighScore);
 
 }
 
@@ -220,6 +257,12 @@ var gameOver = function(){
     pause = true;
     $('#Menu').show();
     $('#myCanvas').removeClass('hide_cursor');
+    if(newHighScore > oldHighScore){
+        $.post("/highscore", {highscore: newHighScore}, function(result){
+            return result;
+        });
+    }
+    
 }
 
 setInterval(update, 30);

@@ -1,11 +1,16 @@
+body{
+    background-color: rgb(95, 206, 250);    
+}
+
 .header-bar{
-    padding: 6vh 0 6vh 0;
+    border: 2px solid red;
+    padding: 3vh 0 3vh 0;
     text-align: center;
     background-color: whitesmoke;
-    margin-bottom: 6vh;
 }
 
 a:link{
     text-decoration: none!important;
-    color: black;
+    color: red;
+    text-shadow: 1px -2px blue;
 }

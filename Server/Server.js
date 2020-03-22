@@ -1,7 +1,5 @@
 const express = require('express');
 const app = express();
-require("./ApiRoutes");
-
 app.use(express.static("../App"));
 
 app.use(express.urlencoded({ extended: true }));
@@ -11,6 +9,8 @@ if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));
 }
 require("./HtmlRoutes")(app);
+require("./ApiRoutes")(app);
+
 
 const PORT = process.env.PORT ||  8117;
 
